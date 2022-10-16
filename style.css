@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --base-color: 123;
+
+    --bg-primary: hsl(0, 0%, 100%);
+    --bg-secondary:hsla(240, 5%, 7%, 1);
+
+    --primary-color: hsla(var(--base-color), 6%, 21%, 1);
+    --secondary-color: rgba(255, 255, 255, 0.89);
+
+    --bg-buttons-off: hsla(var(--base-color), 9%, 89%, 1);
+    --bg-buttons-off-darkMode: hsla(240, 6%, 17%, 1);
+    --buttons-player-darkMode: hsla(240, 7%, 78%, 1);
+
+    --bg-rain: hsla(194, 97%, 31%, 1);
+    --bg-rain-darkMode: rgb(2, 62, 80);
+    --bg-forest: rgb(13, 122, 60);
+    --bg-forest-darkMode: rgb(7, 68, 33);
+    --bg-coffeshop: rgb(126, 78, 34);
+    --bg-coffeshop-darkMode: rgb(68, 37, 8);
+    --bg-fireplace: rgb(172, 55, 47);
+    --bg-fireplace-darkMode: rgb(100, 26, 21);
+
+    --colorbutton-on: hsla(0, 0%, 100%, 1);
+    --colorbutton-off: hsla(240, 6%, 21%, 1);
+}
+
+body {
+    background: radial-gradient(circle, rgba(227,248,255,1) 0%, rgba(255,255,255,0.06206232492997199) 100%);
+    color: var(--primary-color);
+    display: grid;
+    align-content: center;
+    min-height: 100vh;
+    align-self: end;
+}
+
+.darkMode {
+    background: var(--bg-secondary);
+}
+
+.themeForest {
+    background: radial-gradient(circle, rgb(157, 247, 217) 0%, rgba(255,255,255,0.06206232492997199) 100%);
+}
+.darkMode.themeForestDarkMode {
+    background: rgb(28,62,31);
+    background: radial-gradient(circle, rgb(20, 43, 22) 0%, rgba(0,0,0,1) 100%);
+}
+
+.themeRain{
+    background: radial-gradient(circle, rgb(161, 213, 255) 0%, rgba(255,255,255,0.06206232492997199) 100%);
+}
+.darkMode.themeRainDarkMode {
+    background: rgb(26, 41, 58);
+    background: radial-gradient(circle, rgba(32,50,70,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.themeCoffeshop {
+    background: radial-gradient(circle, rgb(224, 159, 129) 0%, rgba(255,255,255,0.06206232492997199) 100%);
+}
+.darkMode.themeCoffeshopDarkMode {
+    background: rgb(70,51,32);
+    background: radial-gradient(circle, rgb(56, 41, 25) 0%, rgba(0,0,0,1) 100%);
+}
+
+.themeFireplace {
+    background: radial-gradient(circle, rgb(255, 192, 192) 0%, rgba(255,255,255,0.06206232492997199) 100%);
+}
+.darkMode.themeFireplaceDarkMode {
+    background: rgb(87,37,37);
+    background: radial-gradient(circle, rgb(70, 27, 27) 0%, rgba(0,0,0,1) 100%);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    transition: ease-in 0.1s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.buttonLightmode,
+.buttonDarkmode {
+    position: fixed;
+    justify-self: end;
+    margin: 6rem 6rem 0 0;
+
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 19.2rem;
+}
+
+.player {
+    display: grid;
+    gap: 4.8rem;
+}
+
+#timer {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.61rem;
+    line-height: 14.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-evenly;
+}
+
+.displayDarkMode {
+    color: var(--secondary-color);   
+}
+
+#controls {
+    display: flex;
+    gap: 4rem;
+}
+
+.hide {
+    display: none;
+}
+
+#controls button {
+    color: var(--bg-buttons-off);
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
+#controls button svg.svgDarkMode path {
+    fill: var(--buttons-player-darkMode);
+}
+
+#sounds button svg {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin-top: 2.4rem;
+}
+
+#sounds button  {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    border: none;
+}
+
+.slider input {
+    width: 9.0rem;
+    cursor: pointer;
+}
+
+.slider input[type='range'] {
+    -webkit-appearance: none !important;
+    width: 9rem;
+    height: 0.4rem;
+    background: var(--colorbutton-off);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  
+.slider input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: var(--colorbutton-off);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider input[type='range'].volumeDarkMode,
+.slider input[type='range'].volumeDarkMode::-webkit-slider-thumb {
+    background-color: var(--buttons-player-darkMode);
+}
+
+.slider input[type='range'].white,
+.slider input[type='range'].white::-webkit-slider-thumb {
+    background-color: var(--colorbutton-on);
+}
+
+#sounds button {
+    background-color: var(--bg-buttons-off);
+    width: 13.2rem;
+    height: 15.8rem;
+    border-radius: 2.4rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#sounds .cardDarkMode {
+    background-color: var(--bg-buttons-off-darkMode);
+}
+
+.forest svg path,
+.rain svg path,
+.coffeshop svg path,
+.fireplace svg path {
+    fill: var(--colorbutton-off);
+}
+
+#sounds {
+    display: grid;
+    gap: 3.2rem;
+}
+
+#sounds :nth-child(1),
+#sounds :nth-child(2) {
+    display: flex;
+    gap: 3.2rem;
+}
+
+/* se ligar botao */
+
+#sounds .forestOn { 
+    background-color: var(--bg-forest);
+}
+
+#sounds .cardDarkMode.forestOnDarkMode {
+    background-color: var(--bg-forest-darkMode);
+}
+
+#sounds .rainOn {
+    background-color: var(--bg-rain);
+}
+
+#sounds .cardDarkMode.rainOnDarkMode {
+    background-color: var(--bg-rain-darkMode);
+}
+
+#sounds .coffeshopOn {
+    background-color: var(--bg-coffeshop);
+}
+
+#sounds .cardDarkMode.coffeshopOnDarkMode {
+    background-color: var(--bg-coffeshop-darkMode);
+}
+
+#sounds .fireplaceOn {
+    background-color: var(--bg-fireplace);
+}
+
+#sounds .cardDarkMode.fireplaceOnDarkMode {
+    background-color: var(--bg-fireplace-darkMode);
+}
+
+#sounds button svg.white path {
+    fill: var(--colorbutton-on);
+}
+
+#sounds button svg.svgDarkMode path {
+    fill: var(--buttons-player-darkMode);
+}
+
+#sounds button svg.svgDarkMode.white path {
+    fill: var(--colorbutton-on);
+}
+
+
+
+
+
