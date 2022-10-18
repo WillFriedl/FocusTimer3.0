@@ -120,6 +120,14 @@ main {
     justify-content: space-evenly;
 }
 
+.minutes {
+    margin-top: 10px;
+}
+
+.seconds {
+    margin-top: 10px;
+}
+
 .displayDarkMode {
     color: var(--secondary-color);   
 }
@@ -269,8 +277,3 @@ main {
 #sounds button svg.svgDarkMode.white path {
     fill: var(--colorbutton-on);
 }
-
-
-
-
-
