@@ -32,10 +32,10 @@ import {
 let minutes = Number(minutesDisplay.textContent)
 let seconds = Number(secondsDisplay.textContent)
 let timerTimeOut
-const soundForest = new Audio('./sounds/floresta.wav')
-const soundRain = new Audio('./sounds/chuva.wav')
-const soundCoffeshop = new Audio('./sounds/cafeteria.wav')
-const soundFireplace = new Audio('./sounds/lareira.wav')
+const soundForest = new Audio('./sounds/floresta.mp3')
+const soundRain = new Audio('./sounds/chuva.mp3')
+const soundCoffeshop = new Audio('./sounds/cafeteria.mp3')
+const soundFireplace = new Audio('./sounds/lareira.mp3')
 const kitchenTimer = new Audio('https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true')
 
 function lightMode() {
