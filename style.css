@@ -18,6 +18,7 @@
     --bg-buttons-off: hsla(var(--base-color), 9%, 89%, 1);
     --bg-buttons-off-darkMode: hsla(240, 6%, 17%, 1);
     --buttons-player-darkMode: hsla(240, 7%, 78%, 1);
+    --buttons-off-darkModeShadow: rgb(69, 69, 78);
 
     --bg-rain: hsla(194, 97%, 31%, 1);
     --bg-rain-darkMode: rgb(2, 62, 80);
@@ -82,11 +83,12 @@ button {
     border: none;
 
     cursor: pointer;
-    transition: ease-in 0.1s;
+    transition: 0.2s;
 }
 
 button:hover {
     transform: scale(1.1);
+    box-shadow: 0 0.5rem 2.5rem var(--buttons-off-darkModeShadow);
 }
 
 .buttonLightmode,
@@ -143,8 +145,16 @@ main {
 
 #controls button {
     color: var(--bg-buttons-off);
+    border-radius: 50%;
     width: 4.8rem;
     height: 4.8rem;
+    transition: 0.2s;
+}
+
+#controls button:hover {
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 0.5rem 2.5rem var(--buttons-off-darkModeShadow);
 }
 
 #controls button svg.svgDarkMode path {
@@ -276,4 +286,21 @@ main {
 
 #sounds button svg.svgDarkMode.white path {
     fill: var(--colorbutton-on);
+}
+
+@media (max-width: 900px) {
+    .buttonDarkmode,
+    .buttonLightmode {
+        margin: 1rem 1rem 0 0;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 40rem;
+        width: clamp(40rem, 40rem + 10vw, 50rem);
+        margin: 0 auto;
+        gap: 10rem;
+    }
 }
