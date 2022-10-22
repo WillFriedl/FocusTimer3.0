@@ -87,7 +87,7 @@ button {
 }
 
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0.5rem 2.5rem var(--buttons-off-darkModeShadow);
 }
 

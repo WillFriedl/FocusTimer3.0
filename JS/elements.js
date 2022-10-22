@@ -27,6 +27,7 @@ const buttonStop = document.querySelector('.stop')
 const buttonTimerUp = document.querySelector('.up')
 const buttonTimerDown = document.querySelector('.down')
 
+
 export {
     switchTheme,
     switchColorTimer,
@@ -55,5 +56,5 @@ export {
     buttonPlayFake,
     buttonStop,
     buttonTimerUp,
-    buttonTimerDown
+    buttonTimerDown,
 }
