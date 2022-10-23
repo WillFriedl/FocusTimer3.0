@@ -32,16 +32,9 @@ import {
 
 const sound = Sounds()
 
-const timer = Timer({
-    minutesDisplay,
-    secondsDisplay,
-    reset: controls.resetControls
-})
-
 const controls = Controls({
     buttonPlay,
     buttonPlayFake,
-    timer,
     sound,
     buttonLightMode,
     buttonDarkMode,
@@ -64,6 +57,12 @@ const controls = Controls({
     buttonRainVolume,
     buttonCoffeshopVolume,
     buttonFireplaceVolume,
+})
+
+const timer = Timer({
+    minutesDisplay,
+    secondsDisplay,
+    controls,
 })
 
 Events({

@@ -1,9 +1,6 @@
-
 import {
     buttonPlay,
     buttonStop,
-    buttonTimerUp,
-    buttonTimerDown,
     buttonLightMode,
     buttonDarkMode,
     buttonForestVolume,
@@ -42,6 +39,8 @@ export default function Events({
 
     buttonStop.addEventListener('click', function() {
         controls.resetControls()
+        timer.resetTimer()
+        timer.updateMinutes(25, 0)
     })
 
     buttonForestVolume.addEventListener('input', function() {

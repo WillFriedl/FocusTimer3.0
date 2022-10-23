@@ -22,7 +22,6 @@ export default function Controls({
     buttonRainVolume,
     buttonCoffeshopVolume,
     buttonFireplaceVolume,
-    timer,
     sound,
 }) {
 
@@ -44,8 +43,6 @@ export default function Controls({
         switchTheme.classList.remove('themeForest', 'themeRain', 'themeCoffeshop', 'themeFireplace', 'themeForestDarkMode', 'themeRainDarkMode', 'themeCoffeshopDarkMode', 'themeFireplaceDarkMode')
         sound.soundPause()
         sound.volumeClear()
-        timer.resetTimer()
-        timer.updateMinutes(25, 0)
     }
 
     function play() {

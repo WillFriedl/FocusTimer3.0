@@ -7,7 +7,7 @@ import {
 export default function Timer({
     minutesDisplay,
     secondsDisplay,
-    controls,
+    controls
 }) {
 
     let timerTimeOut
@@ -21,6 +21,7 @@ export default function Timer({
       function resetTimer() {
         updateTimerDisplay(25, 0)
         clearTimeout(timerTimeOut)
+        controls.resetControls()
     }
 
     function countdown() {
@@ -31,8 +32,8 @@ export default function Timer({
         updateTimerDisplay(25, 0)
       
         if (minutes <= 0 && seconds <= 0) {
+            resetTimer()
             Sounds().kitchenTimer.play()
-            resetControls()
             return
         }
     
@@ -77,8 +78,6 @@ export default function Timer({
         updateTimerDisplay,
         resetTimer,
         countdown,
-        setTimeout,
-        timerTimeOut,
         updateMinutes,
       }
 }
