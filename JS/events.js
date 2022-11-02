@@ -43,6 +43,7 @@ export default function Events({
             timer.resetTimer()
             timer.updateMinutes(25, 0)
             timer.countdown()
+            controls.play()
         }
     })
 
