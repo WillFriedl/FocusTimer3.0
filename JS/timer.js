@@ -42,8 +42,7 @@ export default function Timer({
             --minutes
         }
 
-        console.log(updateTimerDisplay)
-    
+
         updateTimerDisplay(minutes, String(seconds - 1))
     
         countdown()
@@ -51,7 +50,7 @@ export default function Timer({
     }
 
     buttonTimerUp.addEventListener('click', function() {
-        let newMinutes = minutes + 5
+        let newMinutes = Number(minutesDisplay.textContent) + 5
         if(!newMinutes) {
             return
         }
@@ -61,7 +60,7 @@ export default function Timer({
     })
 
     buttonTimerDown.addEventListener('click', function() {
-        let newMinutes = minutes - 5
+        let newMinutes = Number(minutesDisplay.textContent) - 5
         if(!newMinutes) {
             return
         }
