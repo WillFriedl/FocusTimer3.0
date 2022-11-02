@@ -69,4 +69,6 @@ Events({
     sound,
     controls, 
     timer,
+    minutesDisplay,
+    secondsDisplay,
 })

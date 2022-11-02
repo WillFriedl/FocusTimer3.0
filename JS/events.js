@@ -22,6 +22,8 @@ export default function Events({
     timer,
     controls,
     sound,
+    minutesDisplay,
+    secondsDisplay,
 }) {
 
     buttonLightMode.addEventListener('click', function() {
@@ -35,6 +37,13 @@ export default function Events({
     buttonPlay.addEventListener('click', function() {
         controls.play()
         timer.countdown()
+
+        if(minutesDisplay.textContent == 0 && secondsDisplay.textContent == 0) {
+            controls.resetControls()
+            timer.resetTimer()
+            timer.updateMinutes(25, 0)
+            timer.countdown()
+        }
     })
 
     buttonStop.addEventListener('click', function() {
