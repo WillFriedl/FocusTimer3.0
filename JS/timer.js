@@ -10,6 +10,7 @@ export default function Timer({
   let minutes = Number(minutesDisplay.textContent)
   let endTime
   let minutesDefault
+  
 
   function updateTimerDisplay(minutes, seconds) {
     minutesDisplay.textContent = String(minutes).padStart(2, "0")
@@ -17,19 +18,19 @@ export default function Timer({
   }
 
   function resetTimer() {
-    updateTimerDisplay(25, 0)
-    clearTimeout(timerTimeout)
-    controls.resetControls()
-  }
+      updateTimerDisplay(minutes, 0)
+      clearTimeout(timerTimeout)
+      controls.resetControls()
+    }
 
-  function countdown() {
-      console.time("timer")
-    const startTime = Date.now()
-    endTime = startTime + 25 * 60 * 1000 // 25 minutes in milliseconds
+    function countdown() {
+        console.time("timer")
+        const startTime = Date.now()
+        endTime = startTime + minutes * 60 * 1000 // display number minutes in milliseconds
 
     function updateRemainingTime() {
-      const currentTime = Date.now()
-      const remainingTime = endTime - currentTime
+        const currentTime = Date.now()
+        const remainingTime = endTime - currentTime
 
       if (remainingTime <= 0) {
         resetTimer()
@@ -61,25 +62,29 @@ export default function Timer({
 
 
       const timeDiff = delay - 1000 // Time in milliseconds of difference every 1 second
-      console.log(timeDiff)
-
-      timerTimeout = setTimeout(updateRemainingTime, delay)
+      const elapsedTimeCountdown = - delay + 1000 + delay
+      console.log(
+        "delay", delay,
+        "timeDiff", timeDiff,
+        "elapsedTimeCountdown", elapsedTimeCountdown
+       )
+       timerTimeout = setTimeout(updateRemainingTime, delay)
     }
-
     updateRemainingTime()
     console.timeEnd("timer")
-  }
+}
 
   buttonTimerUp.addEventListener("click", function () {
     let newMinutes = Number(minutesDisplay.textContent) + 5
     let newSeconds = Number(secondsDisplay.textContent)
 
-    if (minutesDisplay.textContent >= 55) {
-        return 
+    if (minutesDisplay.textContent > 55) {
+        return
     }
-
+    
     minutes = newMinutes
-
+    
+    console.log(minutes)
     if (endTime) {
       const currentTime = Date.now()
       const remainingTimeMillis = endTime - currentTime
@@ -87,11 +92,11 @@ export default function Timer({
       const newEndTime = currentTime + newRemainingTimeMillis
       endTime = newEndTime
       minutesDefault = Math.floor(newRemainingTimeMillis / 60000)
-      updateTimerDisplay(minutesDefault, newSeconds)
+      updateTimerDisplay(minutes, newSeconds)
     } else {
-      updateTimerDisplay(newMinutes, newSeconds)
+        updateTimerDisplay(minutes, newSeconds)
     }
-  })
+})
 
   buttonTimerDown.addEventListener("click", function () {
     let newMinutes = Number(minutesDisplay.textContent) - 5

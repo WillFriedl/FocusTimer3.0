@@ -41,16 +41,32 @@ export default function Events({
         if(minutesDisplay.textContent == 0 && secondsDisplay.textContent == 0) {
             controls.resetControls()
             timer.resetTimer()
-            timer.updateMinutes(25, 0)
+            timer.updateMinutes(newMinutes, 0)
             timer.countdown()
             controls.play()
         }
     })
 
     buttonStop.addEventListener('click', function() {
+        
+        let newMinutes = Number(minutesDisplay.textContent)
+        
+        if (newMinutes >  0 && newMinutes <  5) newMinutes = 5
+        if (newMinutes >  5 && newMinutes < 10) newMinutes = 10
+        if (newMinutes > 10 && newMinutes < 15) newMinutes = 15
+        if (newMinutes > 15 && newMinutes < 20) newMinutes = 20
+        if (newMinutes > 20 && newMinutes < 25) newMinutes = 25
+        if (newMinutes > 25 && newMinutes < 30) newMinutes = 30
+        if (newMinutes > 30 && newMinutes < 35) newMinutes = 35
+        if (newMinutes > 35 && newMinutes < 40) newMinutes = 40
+        if (newMinutes > 40 && newMinutes < 45) newMinutes = 45
+        if (newMinutes > 45 && newMinutes < 50) newMinutes = 50
+        if (newMinutes > 50 && newMinutes < 55) newMinutes = 55
+        if (newMinutes > 55 && newMinutes < 60) newMinutes = 60
         controls.resetControls()
         timer.resetTimer()
-        timer.updateMinutes(25, 0)
+        
+        timer.updateMinutes(newMinutes, 0)
     })
 
     buttonForestVolume.addEventListener('input', function() {
